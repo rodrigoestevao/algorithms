@@ -38,11 +38,11 @@ int main(int argc, char **argv) {
     int elements = (argc == 2) ? atoi(argv[1]) : 10;
     struct NODE *root = create(elements);
     printf("\nIn-Order  : ");
-    transversal_inorder(root);
+    inorder(root);
     printf("\nPost-Order: ");
-    transversal_postorder(root);
+    postorder(root);
     printf("\nPre-Order : ");
-    transversal_preorder(root);
+    preorder(root);
 
     int index, medium = (elements / 2) + 1;
     char element = 0;
@@ -51,10 +51,10 @@ int main(int argc, char **argv) {
         element = LETTERS[index];
         if (search(element, root)) {
             printf("\nBefore Remove [%c]: ", element);
-            transversal_inorder(root);
+            inorder(root);
             delete(element, root);
             printf("\nAfter  Remove [%c]: ", element);
-            transversal_inorder(root);
+            inorder(root);
             --medium;
         }
     }

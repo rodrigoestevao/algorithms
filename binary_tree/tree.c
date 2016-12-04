@@ -89,26 +89,26 @@ struct NODE *max_value_node(struct NODE *node) {
     return current;
 }
 
-void transversal_preorder(struct NODE *node) {
+void preorder(struct NODE *node) {
     if (node != NULL) {
         printf("%c ", node->data);
-        transversal_preorder(node->left);
-        transversal_preorder(node->right);
+        preorder(node->left);
+        preorder(node->right);
     }
 }
 
-void transversal_postorder(struct NODE *node) {
+void postorder(struct NODE *node) {
     if (node != 0) {
-        transversal_postorder(node->left);
-        transversal_postorder(node->right);
+        postorder(node->left);
+        postorder(node->right);
         printf("%c ", node->data);
     }
 }
 
-void transversal_inorder(struct NODE *node) {
+void inorder(struct NODE *node) {
     if (node != 0) {
-        transversal_inorder(node->left);
+        inorder(node->left);
         printf("%c ", node->data);
-        transversal_inorder(node->right);
+        inorder(node->right);
     }
 }
